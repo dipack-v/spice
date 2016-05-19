@@ -43,7 +43,6 @@ $(function(){
 			$(document.body).html( new LoginView({model: loginInfo}).$el);
 	    },
 	    
-	
 	    showPage: function(page) {
 	        var p = page ? parseInt(page, 10) : 1;
 	        $( document.body ).html( new AppView({model:new Menu({'page':page})}).$el);
