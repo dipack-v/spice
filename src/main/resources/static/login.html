@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <meta http-equiv="cache-control" content="max-age=0" />
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="expires" content="0" />
+        <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+        <meta http-equiv="pragma" content="no-cache" />
+
+        <title>Maersk Login</title>
+
+        <!-- Bootstrap CSS -->
+
+        <link rel="stylesheet" type="text/css" media="screen" href="assets/css/login.css">   
+        <link rel="stylesheet" type="text/css" media="screen" href="assets/css/ionicons.min.css">  
+        <link rel="stylesheet" type="text/css" media="screen" href="assets/css/custom.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="assets/css/ionicons.min.css" />
+    
+
+
+
+
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="assets/js/html5shiv.js"></script>
+            <script src="assets/js/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+
+    <div class="login-wrapper">
+        <div class="text-center">
+            <a href="index.html">
+                <img class="text-center login-logo" src="assets/img/logo.png" alt="">
+            </a>
+        </div>
+        
+        <div class="login-header">
+            Log in
+        </div>
+        <div class="login-content">
+            <form  action="login" method="post"  role="form">
+                <div class="text-danger text-center bottom-10 login-error">
+                   <i class="ion ion-android-warning"></i>&nbsp; Invalid login details
+                </div>
+                <div class="form-group">
+                    <input type="text" name="username" class="form-control" id="" placeholder="User Name">
+                </div>
+
+                <div class="form-group">
+                    <input type="password" name="password" id="password" class="form-control" id="" placeholder="Password">
+                </div>
+                
+				<button type="submit" id="submit" class="btn btn-default btn-lg btn-block">Log in</button>
+                
+               
+            </form>
+            
+           
+
+        </div>
+    </div>
+
+
+
+	<script src="assets/lib/jquery/jquery.min.js" type="text/javascript"></script>	
+	<script src="assets/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>	
+	<script src="lib/jquery.cookie.js"></script>
+	<script>
+	$(function(){
+		
+		/*var token = $("meta[name='_csrf']").attr("content");
+		var header = $("meta[name='_csrf_header']").attr("content");
+		$(document).ajaxSend(function(e, xhr, options) {
+			xhr.setRequestHeader(header, token);
+		});*/
+		var username = 'spice';
+		var password = 'spice';
+		$("#submit").click(function(e){
+			e.preventDefault();
+			/*$.ajax({
+		        method: 'POST',
+		        url: '/login',
+		        headers: {
+		            "Authorization": "Basic " + btoa(username + ":" + password),
+		            "X-CSRF-TOKEN" :$.cookie('_csrf')
+		        }
+		      
+		        //data: {'username': username, 'password': password, "_csrf": $.cookie('_csrf') }
+	    	});*/
+			//var data = 'username=' + username + '&password=' + password ;
+	    	var data = {'username': username, 'password': password, "_csrf": $.cookie('_csrf') };
+	        $.ajax({
+	            data: data,
+	            timeout: 1000,
+	            headers: {
+	                "X-CSRF-TOKEN": $.cookie('_csrf')
+	            },
+	            type: 'POST',
+	            url: '/login'
+	 
+	        }).done(function(data, textStatus, jqXHR) {
+	        	console.log('success');
+	            var preLoginInfo = JSON.parse($.cookie('dashboard.pre.login.request'));
+	            window.location = preLoginInfo.url;
+	 
+	        }).fail(function(jqXHR, textStatus, errorThrown) {
+	            alert('Booh! Wrong credentials, try again!');
+	        });
+		});
+		
+		
+		
+	 	
+		
+	});
+	</script>
+    </body>
+</html>

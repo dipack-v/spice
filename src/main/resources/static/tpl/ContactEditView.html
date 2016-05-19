@@ -1,0 +1,130 @@
+<div class="slide-page">
+    <h1 class="slide-title">Business Details</h1>
+    <div class="row">
+
+        <div class="col-md-7 col-sm-7 col-xs-7">
+            <form action="" method="POST" role="form">
+
+                <label class="iaflabel" for="companyname">Name of company</label>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" name="name" placeholder="Company name" value="<%=name%>">
+                </div>
+
+                <label class="iaflabel">Type</label>
+                <!-- xradio buttons-->
+                <div class="form-group check-radio">
+                    <ul class="list-unstyled list-inline checkboxes-radio">
+                        <li>
+                            <input type="radio" name="type" id="public" value="Public" class="company_type" <% if(type==='Public'){print('checked')}%> />
+                            <label for="public"><span></span>Public</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="type" id="private" value="Private" class="company_type" <%= type==='Private' ? 'checked' : '' %> />
+                            <label for="private"><span></span>Private</label>
+                        </li>
+                    </ul>
+                </div><!-- /check-radio -->
+
+
+
+   				<div class="row">
+                    <div class="col-md-6">
+		                <label class="iaflabel" for="date">Date of incorporation</label>
+		
+		                <div class="form-group">
+		                    <div class="input-group demo-group">
+		                        <span class="input-group-addon addon-left"><i class="ion ion-ios-calendar-outline"></i></span>
+		                        <input type="text" name="dateOfIncorporation" class="form-control" id="date-popup" data-provide="datepicker"  data-date-format="dd/mm/yyyy" placeholder="Date" value="<%=dateOfIncorporation%>" />
+		                    </div>
+		                </div>
+		            </div>
+
+					<div class="col-md-6">
+		                <div class="form-group">
+		                    <label class="iaflabel">Unique ID</label>
+		
+		                    <div class="form-group">
+		                        <input type="text" name="uniqueId" class="form-control" placeholder="Unique ID" value="<%=uniqueId%>">
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+
+                <label class="iaflabel" for="username">Business address</label>
+                <label for="address" class="help-block">Address:</label>
+                <div class="form-group">
+                    <input type="text"  class="form-control" placeholder="Address 1" value="<%=addresses[0].addressLine1 %>">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Address 2" value="<%=addresses[0].addressLine2 %>">
+                </div>
+                    
+                <label for="city" class="help-block">City:</label>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="City" value="<%=addresses[0].city %>">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="state" class="help-block">State:</label>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="State"  value="<%=addresses[0].state %>">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="state" class="help-block">Postal code:</label>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Postal code" value="<%=addresses[0].pin %>">
+                        </div>
+                    </div>
+                </div>
+                
+
+                <label for="country"  class="help-block">Country:</label>
+                <div class="form-group">
+                   <select class="form-control country-select" placeholder="Country" value="<%=addresses[0].country %>">
+                 
+                </select>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="phone" class="help-block">Phone:</label>
+                    <div class="form-group">
+                        <input type="text" name="phone" id="phone" class="form-control" placeholder="Phone" value="<%=phone%>">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="fax" class="help-block">Email id:</label>
+                    <div class="form-group">
+                        <input type="text" name="email" id="email" class="form-control" placeholder="Email id" value="<%=email%>">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                 <div class="col-md-offset-6 col-md-6">
+                     <div class="form-group bottom-40">
+                         <a href="#" class="btn btn-default save" id="view_details13">save</a>
+                     </div>
+                 </div>
+            </div>
+
+
+            <div class="top-20" id="business-address">
+               
+            </div><!-- /top-40 -->
+
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+$(function(){
+	 $('.selectize').selectize();
+});
+
+</script>
+</div>
+
+<!-- End of Slide Page -->

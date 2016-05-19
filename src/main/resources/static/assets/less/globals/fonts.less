@@ -1,0 +1,45 @@
+// Fonts
+// Description: Add custom fonts here if importing and assign them via the @font-primary, @font-secondary variables for use with the .custom-font mixin
+
+// Declare a Primary and Secondary font selection here
+
+@font-primary: "Helvetica Neue", Helvetica, Arial, sans-serif;
+// @font-secondary: "Tahoma";
+
+// If you would prefer importing from an external source (i.e. Google Fonts), declare them here when using @import
+// @import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700,900");
+// @font-secondary: 'Source Sans Pro';
+
+// Custom Font Mixin for easy declaration of customized fonts on elements
+
+@font-face {
+    font-family: 'ZettaRegular';
+    src: url('../fonts/Zetta Sans-Regular.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Zetta Sans-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Zetta Sans-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/Zetta Sans-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+    url('../fonts/Zetta Sans-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/Zetta Sans-Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+ font-family: 'ZettaDemiBold';
+ src: url('../fonts/Zetta Serif-DemiBold Playtype.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Zetta Serif-DemiBold Playtype.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Zetta Serif-DemiBold Playtype.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/Zetta Serif-DemiBold Playtype.woff') format('woff'), /* Pretty Modern Browsers */
+    url('../fonts/Zetta Serif-DemiBold Playtype.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/Zetta Serif-DemiBold Playtype.svg#svgFontName') format('svg'); /* Legacy iOS */
+
+       
+}
+
+
+.custom-font(@color:@default,@font-family:@font-primary,@font-size:14px,@font-style:normal,@font-weight:400) {
+	// Organized alphabetically (color -> weight)
+	color: @color;
+	font-family: @font-family;
+	font-size: @font-size;
+	font-style: @font-style;
+	font-weight: @font-weight;
+}

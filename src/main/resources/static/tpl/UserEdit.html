@@ -1,0 +1,60 @@
+<form action="" method="POST" role="form">
+    <label class="iaflabel" for="username">User name and email</label>
+    <label class="help-block" for="firstname">Name:</label>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <input type="text" class="form-control" id="firstName" placeholder="First name" value="<%=firstName%>" />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <input type="text" class="form-control" id="lastName" placeholder="Last name" value="<%=lastName%>" />
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="form-group">
+        <label class="help-block" for="emailaddress">Email:</label>
+        <div class="input-group demo-group">
+            <span class="input-group-addon addon-left"><i class="ion ion-email font-20"></i></span>
+            <input type="text" class="form-control" id="emailId" placeholder="Email adresss" value="<%=emailId%>" />
+        </div>
+    </div>
+
+    <div class="form-group has-error">
+        <label class="iaflabel control-label" for="username">User role</label>
+            <div class="row check-radio">
+                <div class="col-md-12">
+                  <ul class="list-unstyled checkboxes-radio">
+                    <li>
+                        <input type="checkbox" name="userrole" class="user-role"  id="supervisor" />
+                        <label for="supervisor"><span></span>Supervisor</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="userrole" class="user-role"  id="dataentry" checked />
+                        <label for="dataentry"><span></span>Data entry specialist</label>&nbsp;
+                        <a href="#" class="text-primary tooltipInfo"><i class="ion ion-android-alert"></i></a>
+                    </li>
+                    <li class="text-light-grey tooltip_info">
+                        User can enter and edit information in the Spice system. User is not authorized to submit Detailed Profile to Maersk
+                    </li>
+                    <li>
+                        <input type="checkbox" name="userrole" class="user-role"  id="signatory" checked />
+                        <label for="signatory"><span></span>Authorised signatory</label>
+                    </li>
+                </ul>
+            </div>
+        </div><!-- /check-radio -->
+        </div>
+        
+        <div class="row">
+            <div class="col-md-offset-6 col-md-6">
+                <div class="form-group bottom-20">
+                    <a href="#" class="btn btn-default submit" id="view_details13">save</a>
+                </div>
+            </div>
+        </div>
+    
+</form>

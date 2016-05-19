@@ -1,0 +1,184 @@
+@import "../globals/variables";
+
+
+
+.left-bar
+{
+	width: @leftbarwidth;
+	background-color: white;
+	/*position: absolute !important;	*/
+	height: 100vh;
+	width: @leftbarwidth;
+	background-color: @left-bar-bg;
+	display: block;
+	float: left;	
+	-webkit-transition: all 200ms ease-out;  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+	-moz-transition: all 200ms ease-out;  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+	transition: all 200ms ease-out;  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */
+	z-index: 99999999999;		
+	
+	.avatar-holder
+	{
+		width: @leftbarwidth;
+		text-align: center;
+
+		.parial-bg
+		{
+			width: 100%;
+			height: 100px;
+			background-color : #f0f0f0;
+			border-bottom: 1px solid #afafaf;
+		}
+		img
+		{
+			width: 120px;
+			height: 120px;
+			border-radius: 50%;
+			margin: 0px auto;
+			border:1px solid #afafaf;
+			background-color: white;
+			margin-top: -60px;
+		}
+		.username
+		{
+			margin-top: 20px;
+			color: #999999;
+	    	font-size: 18px;
+	    	font-weight: 300;
+		}
+		.user-email
+		{
+			color: #2c2e31;
+	    	font-size: 12px;
+	    	margin-top: 15px;
+		}
+	}
+
+
+	.questions-tab
+	{
+		margin-top: 20px;
+		> li
+		{
+		    border-bottom: 1px solid #e9ecf2;
+		    padding-left: 20px;
+		    &:first-child
+		    {
+				border-top: 1px solid #e9ecf2;
+		    }
+			> a
+			{
+				padding-left: 20px;
+			    padding-right: 5px;
+			    display: inline-block;
+			    height: 50px;
+			    cursor: pointer;
+			    width: 100%;
+			    line-height: 50px;
+			    text-decoration: none;
+			    font-size: 13px;
+			    letter-spacing: 0.5;
+			    font-weight: 300;
+			    color: #FFFFFF;
+			    position: relative;
+			    background-color: #69B8D6;
+			    text-transform: uppercase;
+			}
+
+			&.current a
+			{
+				background-color: #004E6B;
+			}
+
+			.submenu-current
+			{
+				background-color: #004E6B;
+			}
+		}
+	}
+
+
+	.submenu
+	{
+		border-left: 1px solid @primary-color;
+		margin-left: 15px;
+		li
+		{
+			line-height: 40px;
+			font-size: 13px;
+			border-width: 0px;
+			color: @primary-color;
+
+			span.number
+			{
+				width: 25px;
+				height: 25px;
+				border:1px solid @primary-color;
+				border-radius: 25px;
+				display: inline-block;
+				line-height: 23px;
+				text-align: center;
+				margin-left: -12px;
+				color: @primary-color;
+				margin-right: 5px;
+				background-color: white;
+			}
+
+			a
+			{
+				color: @primary-color;
+				text-decoration:none;
+				display: block;
+				&:hover
+				{
+					text-decoration:none;
+					span.number
+					{
+						background-color: @primary-color;
+						color: white;
+					}
+				}
+			}
+
+			&.current
+			{
+				span.number
+					{
+						background-color: @primary-color;
+						color: white;
+					}
+
+			}
+		}
+	}
+}
+
+.toggle-left-bar
+{
+	font-size: 32px;
+	color: white;
+	line-height: 50px;
+	display: none;
+	&:hover
+	{
+		color:lighten(@primary-color,10%);
+	}
+}
+
+
+@media(max-width: 800px)
+{
+	.left-bar
+	{
+		margin-left: -@leftbarwidth;
+	}
+	.left-bar-visible
+	{
+		margin-left: 0px !important;
+	}
+
+	.toggle-left-bar
+	{
+		display: inline-block;
+	}
+}

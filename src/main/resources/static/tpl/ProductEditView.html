@@ -1,0 +1,143 @@
+  <div class="slide-page">
+          <h1 class="slide-title">Requested Service</h1>
+
+          <div class="row">
+
+              <div class="col-md-6 col-sm-9 col-xs-9">
+                  <form action="index.html" method="GET" role="form">
+                  
+                  <label class="iaflabel text-sm top-20">Service: </label>
+                  <div class="form-group check-radio">
+                      <div class="col-sm-12">
+                          <ul class="list-inline checkboxes-radio">
+                              <li>
+                                  <input type="radio" name="payment" id="paymentYes" checked/>
+                                  <label for="paymentYes"><span></span>Pre-shipment</label>
+                              </li>
+                              <li>
+                                  <input type="radio" name="payment" id="paymentNo" />
+                                  <label for="paymentNo"><span></span>Post-shipment</label>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+                    
+                  <h1 for="" class="iaflabel ptop-40">Terms</h1>
+
+                  <label class="iaflabel text-sm">Lending terms: </label>
+                  <!-- xradio buttons-->
+                  <div class="form-group check-radio">
+
+                      <div class="col-sm-12">
+                          <ul class="list-inline checkboxes-radio">
+                              <li>
+                                  <input type="radio" name="lendingterms" id="withResource" checked/>
+                                  <label for="withResource"><span></span>With recourse</label>
+                              </li>
+                              <li>
+                                  <input type="radio" name="lendingterms" id="withoutPayment" />
+                                  <label for="withoutPayment"><span></span>Without payment guarantee</label>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+
+                  <label class="iaflabel text-sm">Payment terms with consignee: </label>
+                  <!-- xradio buttons-->
+                  <div class="form-group check-radio">
+
+                      <div class="col-sm-12">
+                          <ul class="list-inline checkboxes-radio">
+                              <li>
+                                  <input type="radio" name="consignee" id="onSight" value="no" class="consignee_type" checked/>
+                                  <label for="onSight"><span></span>Onsight</label>
+                              </li>
+                              <li>
+                                  <input type="radio" name="consignee" id="Usance" value="yes" class="consignee_type"/>
+                                  <label for="Usance"><span></span>Usance</label>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+
+                  <div class="form-group hidden usance-reveal pleft-30">
+                      <label for="">Days of credit to consignee</label>
+                      <div class="form-group check-radio">
+
+                          <div class="col-sm-12">
+                              <ul class="list-inline checkboxes-radio">
+                                  <li>
+                                      <input type="radio" name="credit" id="30days" checked/>
+                                      <label for="30days"><span></span>30 days</label>
+                                  </li>
+                                  <li>
+                                      <input type="radio" name="credit" id="60days" value="yes"/>
+                                      <label for="60days"><span></span>60 days</label>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+
+                  <label class="iaflabel text-sm">Contract number: </label>
+                  <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Contract number">
+                  </div>
+                  
+                  <label class="iaflabel text-sm">Currency for credit line: </label>
+                  <div class="form-group check-radio">
+                      <ul class="list-unstyled list-inline checkboxes-radio">
+                          <li>
+                              <input type="radio" name="model_currency" id="usd" class="model_currency" checked/>
+                              <label for="usd"><span></span>US dollar, $</label>
+                          </li>
+                          <li>
+                              <input type="radio" name="model_currency" id="euro" class="model_currency"/>
+                              <label for="euro"><span></span>European euro, &euro;</label>
+                          </li>
+                      </ul>
+                  </div><!-- /check-radio -->
+
+                  <div class="form-group">
+                      <label class="iaflabel text-sm">Purchase order value in credit line currency: </label>
+                      <div class="input-group demo-group">
+                          <span class="input-group-addon addon-left">$</span>
+                          <input type="text" class="form-control" placeholder="Purchase order value">
+                      </div>
+                          
+                  </div>
+
+                  <div class="form-group">
+                      <div class="row">
+                          <div class="col-md-5 col-sm-6 col-xs-6">
+                              <div class="doc-outline">
+                                 <div class="panel panel-default">
+                                      <a href="#" class="doc-link" data-toggle="modal" data-target="#inputFile">
+                                         <div class="panel-body text-center add-doc">
+                                              <div class="add-doc-button"><i class="ion ion-ios-upload-outline doc-plus"></i></div>
+                                              <div class="add-doc-name"><span class="doc-text">Purchase Order</span></div>
+                                          </div> 
+                                      </a>
+                                  </div> 
+                              </div><!-- /doc-outline -->
+                          </div>
+                      </div><!-- /row -->
+                  </div>
+
+                  <div class="row">
+                      <div class="col-md-12 col-sm-12 col-xs-12">
+                          <div class="top-10">
+                             <a class="btn btn-default next-page" data-page="16" id="view_details13">CONTINUE &nbsp; <i class="ion-ios-arrow-forward"></i></a>  
+                         </div>   
+                     </div>
+                  </div>
+                  
+                  <div class="row">
+                       <div class="col-md-offset-7 col-md-5">&nbsp;
+                       </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+
+</div>
