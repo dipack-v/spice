@@ -158,10 +158,14 @@ window.ContactEditView = Backbone.View.extend({
         // Apply the change to the model
         var target = event.target;
         var change = {};
-        change[target.name] = target.value;
-        this.model.set(change);
-
-        console.log(this.model.toJSON());
+        if($(target).data('address')  === undefined){
+        	change[target.name] = target.value;
+        	 this.model.set(change);
+        }else{
+        	change[$(target).data('address')] = target.value;
+        	this.model.get('addresses').at(0).set(change);
+        	
+        }
     },
     
     beforeSave: function(e) {

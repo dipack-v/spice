@@ -33,29 +33,32 @@
 		                        <span class="help-block"><%=email%></span>
 		                    </div>
 		                </div>    
-		                        
-		                <div class="col-md-6">
-		                	<div>
-		                        <span>Address:</span><br>
-		                        <span class="help-block"><%=addresses[0].addressLine1 %>, <%=addresses[0].addressLine2 %></span>
-		                    </div>
 		                
-		                	<div>
-		                        <span>City:</span><br>
-		                        <span class="help-block"><%=addresses[0].city %></span>
-		                    </div>
-		                    <div>
-		                        <span>State:</span><br>
-		                        <span class="help-block"><%=addresses[0].state %></span>
-		                    </div>
-		                    <div>
-		                        <span>Postal code:</span><br>
-		                        <span class="help-block"><%=addresses[0].pin %></span>
-		                    </div>
-		                    <div>
-		                        <span>Country:</span><br>
-		                        <span class="help-block"><%=addresses[0].country %></span>
-		                    </div>
+
+		                <div class="col-md-6">
+		            		<% _.each(addresses, function (address) { %>
+								 <div>
+			                        <span>Address:</span><br>
+			                        <span class="help-block"><%=address.addressLine1 %>, <%=address.addressLine2 %></span>
+			                    </div>
+			                
+			                	<div>
+			                        <span>City:</span><br>
+			                        <span class="help-block"><%=address.city %></span>
+			                    </div>
+			                    <div>
+			                        <span>State:</span><br>
+			                        <span class="help-block"><%=address.state %></span>
+			                    </div>
+			                    <div>
+			                        <span>Postal code:</span><br>
+			                        <span class="help-block"><%=address.pin %></span>
+			                    </div>
+			                    <div>
+			                        <span>Country:</span><br>
+			                        <span class="help-block"><%=address.country %></span>
+			                    </div>
+							<% }); %>
 		                    
 			                 <div class="ptop-40 pull-right">
 				                <a href="#" class="edit edit-link">edit</a>

@@ -14,6 +14,16 @@ $(document).ajaxError(function(e, xhr, options) {
 	}
 });
 
+Backbone.Model.prototype.toJSON = function() {
+	var json = _.clone(this.attributes);
+	for(var attr in json) {
+		if((json[attr] instanceof Backbone.Model) || (json[attr] instanceof Backbone.Collection)) {
+			json[attr] = json[attr].toJSON();   
+	    }
+	}
+	return json;
+};
+
 $(document).ajaxComplete(function(e, xhr, options) {
 	//console.log("ajaxComplete ->"+xhr)
 });

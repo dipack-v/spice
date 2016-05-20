@@ -54,28 +54,28 @@
                 <label class="iaflabel" for="username">Business address</label>
                 <label for="address" class="help-block">Address:</label>
                 <div class="form-group">
-                    <input type="text"  class="form-control" placeholder="Address 1" value="<%=addresses[0].addressLine1 %>">
+                    <input type="text"  class="form-control" data-address="addressLine1"  placeholder="Address 1" value="<%=addresses[0].addressLine1 %>">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Address 2" value="<%=addresses[0].addressLine2 %>">
+                    <input type="text" class="form-control" data-address="addressLine2" placeholder="Address 2" value="<%=addresses[0].addressLine2 %>">
                 </div>
                     
                 <label for="city" class="help-block">City:</label>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="City" value="<%=addresses[0].city %>">
+                    <input type="text" class="form-control" data-address="city" placeholder="City" value="<%=addresses[0].city %>">
                 </div>
 
                 <div class="row">
                     <div class="col-md-6">
                         <label for="state" class="help-block">State:</label>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="State"  value="<%=addresses[0].state %>">
+                            <input type="text" class="form-control" data-address="state" placeholder="State"  value="<%=addresses[0].state %>">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <label for="state" class="help-block">Postal code:</label>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Postal code" value="<%=addresses[0].pin %>">
+                            <input type="text" class="form-control" data-address="pin" placeholder="Postal code" value="<%=addresses[0].pin %>">
                         </div>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
 
                 <label for="country"  class="help-block">Country:</label>
                 <div class="form-group">
-                   <select class="form-control country-select" placeholder="Country" value="<%=addresses[0].country %>">
+                   <select class="form-control country-select" data-address="country" placeholder="Country" value="<%=addresses[0].country %>">
                  
                 </select>
             </div>

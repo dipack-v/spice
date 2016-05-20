@@ -46,6 +46,25 @@ window.UserCollection = Backbone.Collection.extend({
 
 });
 
+window.Address = Backbone.Model.extend({
+    defaults: {
+        id: null,
+        addressLine1 : '',
+		addressLine2: '',
+		city: '',
+		state: '',
+		pin: '',
+		country: '',
+		type: "RGTD"
+       
+    }
+	
+});
+
+window.AddressCollection = Backbone.Collection.extend({
+	model: Address
+	
+});
 
 
 window.Contact = Backbone.Model.extend({
@@ -55,43 +74,36 @@ window.Contact = Backbone.Model.extend({
 		type: '',
 		uniqueId: '',
 		dateOfIncorporation: '',
-		addressLine1:'',
-		addressLine2:'',
-		city:'',
-		pin:'',
-		state:'',
-		country : 0,
 		phone: '',
 		email: '',
-		country : 0,
-		addresses: [
-//		             {
-//			addressLine1 : '',
-//			addressLine2: '',
-//			city: '',
-//			state: '',
-//			pin: '',
-//			country: 0,
-//			type: "RGTD"
-//		},
-//		{
-//			addressLine1 : '',
-//			addressLine2: '',
-//			city: '',
-//			state: '',
-//			pin: '',
-//			country: 0,
-//			type: "COMM"
-//		}
-		]
-       
+		addresses: new AddressCollection()
+    }, 
+    initialize : function(){
+    	this.addresses = new AddressCollection(this.get('addresses'));
+    	this.addresses.parent = this;
+  
+    },
+    parse : function(data){
+        //var self = this;
+        var addresses = new AddressCollection(data.addresses);
+       /* $.each( data.addresses, function(index, val) {
+        	addresses.push(val);
+        });*/
+        data.addresses = addresses;
+    	return data;
     }
+    
 	
 });
 
 window.ContactCollection = Backbone.Collection.extend({
     model: Contact,
-    url: "/contacts"
+    url: "/contacts",
+    parse : function(response){
+		//this.addresses.reset(response.addresses);
+		//delete response.addresses; // this will delete the "address" collection from our "Contact" models
+		return response;
+	}
 
 });
 
