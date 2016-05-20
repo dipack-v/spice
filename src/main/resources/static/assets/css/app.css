@@ -8846,7 +8846,7 @@ button.close {
 .left-bar {
   background-color: white;
   /*position: absolute !important;	*/
-  height: 100vh;
+ /* height: 100vh;*/
   width: 275px;
   background-color: #FFFFFF;
   display: block;

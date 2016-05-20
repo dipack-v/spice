@@ -133,8 +133,8 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
 	        .logoutSuccessHandler(logoutSuccessHandler)
 	        .and()
 	        .addFilterAfter(new CsrfHeaderFilter(), CsrfFilter.class)
-            .sessionManagement()
-            .maximumSessions(1)
+            .sessionManagement().disable()
+            //.maximumSessions(1)
          ;
            
     }
@@ -218,7 +218,11 @@ class HttpLogoutSuccessHandler implements LogoutSuccessHandler {
     @Override
     public void onLogoutSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication)
             throws IOException {
-    	request.getSession().invalidate();
+    
+    	/*for(Cookie c: request.getCookies()){
+    		c.setMaxAge(0);
+    	}
+    	request.getSession().invalidate();*/
         response.setStatus(HttpServletResponse.SC_OK);
         response.getWriter().flush();
     }

@@ -50,6 +50,7 @@ window.LoginView = Backbone.View.extend({
 });
 
 window.AppView = Backbone.View.extend({
+	className: 'container-fluid',
 	events: {
         "click a#logout"   : "logout"
 	},

@@ -1,89 +1,84 @@
-  <!-- Top Navbar  -->
-    <div class="top-bar">
-        <nav class="navbar navbar-default top-bar" role="navigation">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" alt=""></a>
-            </div>
+<!-- Top Navbar  -->
+ <div class="top-bar row">
+     <nav class="navbar navbar-default top-bar" role="navigation">
+         <!-- Brand and toggle get grouped for better mobile display -->
+         <div class="navbar-header">
+             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                 <span class="sr-only">Toggle navigation</span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+             </button>
+             <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" alt=""></a>
+         </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="index.html">Shippers</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                           <!--   <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>-->
-                            <li><a href="#" id ="logout">Logout</a></li>
-                            
-                        </ul>
-                    </li>
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </nav>
-    </div><!-- /.Top Navbar -->
+         <!-- Collect the nav links, forms, and other content for toggling -->
+         <div class="collapse navbar-collapse navbar-ex1-collapse">
+             <ul class="nav navbar-nav navbar-right">
+                 <li><a href="index.html">Home</a></li>
+                 <li class="dropdown">
+                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>
+                     <ul class="dropdown-menu">
+                        <!--   <li><a href="#">Action</a></li>
+                         <li><a href="#">Another action</a></li>-->
+                         <li><a href="#" id ="logout">Logout</a></li>
+                         
+                     </ul>
+                 </li>
+             </ul>
+         </div><!-- /.navbar-collapse -->
+     </nav>
+ </div><!-- /.Top Navbar -->
 
 
-    <!-- Secondary Header -->
-    <div class="secondary-header" id="mainMenu">
-        <a href="#" class="toggle-left-bar pull-left" data-target=".navbar-ex2-collapse"><i class="fa fa-bars"></i></a>
-        <h3>Suminter Organics India PV</h3>
-        <span>Long grain rice shipped to Costco Inc.</span>
-    </div>
-    <!-- /.Secondary Header -->
-    
-    <ul class="tabs list-inline nav nav-collapse no-outline navbar-ex2-collapse">
-        <li class="tab">
-            <a href="detailedprofile.html">DETAILED PROFILE</a>
-        </li>
-        <li class="tab">
-            <a href="facility-landing.html">CREDIT LINE</a>
-        </li>
-        <li class="tab">
-            <a href="withdrawl-landing.html">DISBURSEMENT</a>
-        </li>
-    </ul>
+ <!-- Secondary Header -->
+ <div class="secondary-header row" id="mainMenu">
+     <a href="#" class="toggle-left-bar pull-left" ><i class="fa fa-bars"></i></a>
+     <h3>Suminter Organics India PV</h3>
+     <span>Long grain rice shipped to Costco Inc.</span>
+ </div>
+ <!-- /.Secondary Header -->
 
-	<div class="main-content row" >
-		<div id= "menu" class="col-sm-3">
-			  <div class="left-bar pull-left col-xs-4">
-			        <div class="avatar-holder">
-			
-			            <div class="user-details">
-			                <div class="username">
-			                    Hello, Julia
-			                </div>
-			            </div>
-			        </div>
-			        <ul class="list-unstyled questions-tab" id="detailedProfileLeftMenu">
-			        
-			        	<li class="<% if(page==1) print('current');%>">
-			                <a href="#page/1" class="next waves-effect waves-light" data-page="1" >BUSINESS ADDRESS</a>
-			            </li>
-			            <li class="<% if(page==2) print('current');%>">
-			                <a href="#page/2" class="next waves-effect waves-light" data-page="2">BANKING INFORMATION</a>
-			            </li>
-			            <li class="<% if(page==3) print('current');%>">
-			            	<a href="#page/3" class="next waves-effect waves-light" data-page="3">REQUESTED SERVICE</a>
-			        	</li>
-			        	<li class="<% if(page==4) print('current');%>">
-			            	<a href="#page/4" class="next waves-effect waves-light" data-page="4">FINALIZE &AMP; SUBMIT</a>
-			        	</li>
-			    </ul>
-			
-			</div>
+<div class="main-content row" >
+	<div id= "menu" class="col-sm-3 col-md-3 left-bar pull-left">
+		 
+	        <div class="avatar-holder">
+	
+	            <div class="user-details">
+	                <div class="username">
+	                    Hello, Julia
+	                </div>
+	            </div>
+	        </div>
+	        <ul class="list-unstyled questions-tab">
+	        
+	        	<li class="<%= page==1 ? 'current' : '' %>">
+	                <a href="#page/1" class="next waves-effect waves-light" data-page="1" >BUSINESS ADDRESS</a>
+	            </li>
+	            <li class="<%= page==2 ? 'current' : '' %>">
+	                <a href="#page/2" class="next waves-effect waves-light" data-page="2">BANKING INFORMATION</a>
+	            </li>
+	            <li class="<%= page==3 ? 'current' : '' %>">
+	            	<a href="#page/3" class="next waves-effect waves-light" data-page="3">REQUESTED SERVICE</a>
+	        	</li>
+	        	<li class="<%= page==4 ? 'current' : '' %>">
+	            	<a href="#page/4" class="next waves-effect waves-light" data-page="4">FINALIZE &AMP; SUBMIT</a>
+	        	</li>
+	    </ul>
 		
-		</div>
-		<div id= "content" class="col-sm-9"></div>
-    </div>
-
-  
+		
+	
+	</div>
+	<div id= "content" class="col-sm-8 col-md-6"></div>
+   </div>
+<script>
+      $(document).ready(function () {
+          // This toggles the left sidebar on mobile view
+          $('.toggle-left-bar').on('click',function(e){
+        	  e.preventDefault();
+              $('.left-bar').toggleClass('left-bar-visible');
+          });        
+      });
+</script>
 
 
