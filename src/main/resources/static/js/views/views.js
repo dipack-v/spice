@@ -36,12 +36,18 @@ window.LoginView = Backbone.View.extend({
 	className:'row main-content',
 	
 	events: {
-		"change" : "change",
-        "click button#submit"   : "login"
+		'change' : 'change',
+        'click button#submit'   : 'login',
+        'keypress input[type=password]': 'filterOnEnter'
 	},
 	
     initialize: function () {
     	this.render();
+    },
+    
+    filterOnEnter: function(e) {
+        if (e.keyCode != 13) return;
+        this.login(e);
     },
     
     change: function (event) {
