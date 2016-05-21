@@ -78,7 +78,6 @@ window.Contact = Backbone.Model.extend({
   
     },
     parse : function(data){
-        //var self = this;
         var addresses = new AddressCollection(data.addresses);
        /* $.each( data.addresses, function(index, val) {
         	addresses.push(val);
@@ -94,8 +93,6 @@ window.ContactCollection = Backbone.Collection.extend({
     model: Contact,
     url: "/contacts",
     parse : function(response){
-		//this.addresses.reset(response.addresses);
-		//delete response.addresses; // this will delete the "address" collection from our "Contact" models
 		return response;
 	}
 

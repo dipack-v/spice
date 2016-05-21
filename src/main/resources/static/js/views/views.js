@@ -7,17 +7,19 @@ var CountryView = Backbone.View.extend({
     render: function () {	
     	$(this.el).attr('value', this.model.get('code')).html(this.model.get('desc'));
     	return this;
-     
     }
 });
 
 
 var CountriesView = Backbone.View.extend({
-    initialize: function () {
+	selected:'',
+    initialize: function (options) {
+    	this.selected = options.selected;
     	this.render();
     },
     render: function () {
         this.collection.each(this.addOne, this);
+        $(this.el).val(this.selected);//preselect element
         return this;
     },
     
@@ -217,7 +219,8 @@ window.ContactEditView = Backbone.View.extend({
     
     render: function () {	
         this.$el.html(this.template(this.model.toJSON()));  
-        new CountriesView({ el: this.$(".country-select"), collection: countries }); //country dropdown
+        new CountriesView({ el: this.$(".country-select"), collection: countries, 
+        	selected:this.model.get('addresses').at(0).get('country') }); //country dropdown
         return this;
     }
     
@@ -404,9 +407,6 @@ window.ConfirmView = Backbone.View.extend({
     }
     
 });
-
-
-
 
 
 

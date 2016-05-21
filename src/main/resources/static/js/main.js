@@ -94,8 +94,8 @@ $(function(){
 	   
 		app = new AppRouter();
  	    Backbone.history.start();
- 	   window.countries = new CountryCollection();
-       countries.fetch();
+ 	    window.countries = new CountryCollection();
+        countries.fetch();
  	    //window.countries = new CountryCollection();
 
 		
