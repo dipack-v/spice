@@ -1,3 +1,35 @@
+var CountryView = Backbone.View.extend({
+    tagName: "option",
+
+    initialize: function () {
+    	this.model.on('change', this.render, this);
+    },
+    render: function () {	
+    	$(this.el).attr('value', this.model.get('code')).html(this.model.get('desc'));
+    	return this;
+     
+    }
+});
+
+
+var CountriesView = Backbone.View.extend({
+    initialize: function () {
+    	this.render();
+    },
+    render: function () {
+        this.collection.each(this.addOne, this);
+        return this;
+    },
+    
+    addOne:function(country){
+    	var countryView = new CountryView({model: country});
+    	this.$el.append(countryView.render().el);
+    }
+});
+
+
+
+
 window.LoginView = Backbone.View.extend({
 	className:'row main-content',
 	
@@ -144,6 +176,7 @@ window.ContactView = Backbone.View.extend({
 
 
 window.ContactEditView = Backbone.View.extend({
+
     initialize: function () {
     	this.render();
     },
@@ -183,24 +216,8 @@ window.ContactEditView = Backbone.View.extend({
     },
     
     render: function () {	
-        this.$el.html(this.template(this.model.toJSON()));
-        var self = this;
-        //var countries = new CountryCollection();
-        var options ='';
-        countries.fetch().done(function(){
-        	countries.each(function(country, index){
-        		if( country.get('code') == self.model.get('country')){
-        			options += "<option value='" + country.get('code') + "' selected >" + country.get('desc') + "</option>";
-        		}else{
-        			options += "<option value='" + country.get('code') + "'>" + country.get('desc') + "</option>";
-        		}
-        	}, this);
-        	$('.country-select' ).append(options);
-	    });
-       
-   
-      
-        
+        this.$el.html(this.template(this.model.toJSON()));  
+        new CountriesView({ el: this.$(".country-select"), collection: countries }); //country dropdown
         return this;
     }
     
@@ -391,28 +408,5 @@ window.ConfirmView = Backbone.View.extend({
 
 
 
-var ItemView = Backbone.View.extend({
-    tagName: 'option',
-    initialize:function(){        
-        this.template= _.template($('#menu_item_view').html());    
-    },    
-    render:function(){        
-        this.$el.html(this.template(this.model.toJSON()));        
-        return this;        
-    }
-});
 
-var CollectionView = Backbone.View.extend({
-    tagName: 'select',
-    initialize:function(){        
-        this.collection = new ItemCollection();            
-        this.collection.on('sync',this.render,this);            
-        this.collection.fetch();
-    },    
-    render:function(){        
-        _.each(this.collection.models,function( item ){            
-            this.$el.append(new ItemView({model:item}).render().el );        
-        },this);      
-        return this;        
-    }
-});
+

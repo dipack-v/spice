@@ -14,14 +14,8 @@ window.Menu = Backbone.Model.extend({
     }
 });
 
-window.Country = Backbone.Model.extend({
-    defaults: {
-        code:'',
-        desc:''
-    }
-});
-
-window.CountryCollection = Backbone.Collection.extend({
+var Country = Backbone.Model.extend();
+var CountryCollection = Backbone.Collection.extend({
     model: Country,
     url: "/country"
 

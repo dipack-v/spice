@@ -89,11 +89,14 @@ $(function(){
 	
 	});
 	
+	
 	utils.loadTemplate(['LoginView', 'AppView', 'ContactView', 'ContactEditView', 'BankView', 'BankEditView', 'ProductEditView', 'ConfirmView'], function() {
 	   
 		app = new AppRouter();
  	    Backbone.history.start();
- 	    window.countries = new CountryCollection();
+ 	   window.countries = new CountryCollection();
+       countries.fetch();
+ 	    //window.countries = new CountryCollection();
 
 		
 	});
