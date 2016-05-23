@@ -7,9 +7,9 @@ window.utils = {
 
         $.each(views, function(index, view) {
             if (window[view]) {
-                deferreds.push($.get('tpl/' + view + '.html', function(data) {
+                deferreds.push($.ajax({url:'tpl/' + view + '.html',  dataType: 'html', success: function(data) {
                     window[view].prototype.template = _.template(data);
-                }));
+                }}));
             } else {
                 alert(view + " not found");
             }
