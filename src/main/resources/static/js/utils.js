@@ -7,7 +7,7 @@ window.utils = {
 
         $.each(views, function(index, view) {
             if (window[view]) {
-                deferreds.push($.ajax({url:'tpl/' + view + '.html',  dataType: 'html', success: function(data) {
+                deferreds.push($.ajax({url:'tpl/' + view + '.html',  dataType: 'html', jsonp:true, headers:{"Access-Control-Allow-Origin": "*"}, success: function(data) {
                     window[view].prototype.template = _.template(data);
                 }}));
             } else {
