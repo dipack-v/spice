@@ -99,7 +99,7 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-            .withUser("spice").password("spice").roles("USER");
+            .withUser("VijayDeep").password("Spice@8247!").roles("USER");
     }
  
     @Override
