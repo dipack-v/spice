@@ -36,7 +36,6 @@ window.LoginView = Backbone.View.extend({
 	className:'row main-content',
 	
 	events: {
-		'change' : 'change',
         'click button#submit'   : 'login',
         'keypress input[type=password]': 'filterOnEnter'
 	},
@@ -50,14 +49,6 @@ window.LoginView = Backbone.View.extend({
         this.login(e);
     },
     
-    change: function (event) {
-        // Apply the change to the model
-        var target = event.target;
-        var change = {};
-        change[target.name] = target.value;
-        this.model.set(change);
-    },
-    
     render: function () {	
         this.$el.html(this.template(this.model.toJSON()));
         return this;
@@ -66,7 +57,7 @@ window.LoginView = Backbone.View.extend({
     login: function(e){
     	e.preventDefault();
     	var self = this;
-     	var data = {'username': this.model.get('username'), 'password': this.model.get('password'), "_csrf": $.cookie('XSRF-TOKEN') };
+     	var data = {'username': $('#username').val(), 'password': $('#password').val(), "_csrf": $.cookie('XSRF-TOKEN') };
         $.ajax({
             data: data,
             timeout: 1000,
